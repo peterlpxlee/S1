@@ -1,0 +1,74 @@
+{test
+	"objName": "Stage",
+	"variables": [{
+			"name": "substring",
+			"value": "79778",
+			"isPersistent": false
+		},
+		{
+			"name": "substr-n",
+			"value": 6,
+			"isPersistent": false
+		}],
+	"scripts": [[17.25,
+			25.75,
+			[["procDef", "substr %s %n %n", ["string1", "number1", "number2"], ["", 1, 1], false],
+				["setVar:to:", "substr-n", ["getParam", "number1", "r"]],
+				["doRepeat",
+					["+", ["-", ["getParam", "number2", "r"], ["getParam", "number1", "r"]], 1],
+					[["setVar:to:",
+							"substring",
+							["concatenate:with:", ["readVariable", "substring"], ["letter:of:", ["readVariable", "substr-n"], ["getParam", "string1", "r"]]]],
+						["changeVar:by:", "substr-n", 1]]]]],
+		[21, 298, [["setVar:to:", "substring", ""], ["call", "substr %s %n %n", "79778979879", 1, 5]]]],
+	"costumes": [{
+			"costumeName": "背景1",
+			"baseLayerID": 1,
+			"baseLayerMD5": "739b5e2a2435f6e1ec2993791b423146.png",
+			"bitmapResolution": 1,
+			"rotationCenterX": 240,
+			"rotationCenterY": 180
+		}],
+	"currentCostumeIndex": 0,
+	"penLayerMD5": "5c81a336fab8be57adc039a8a2b33ca9.png",
+	"penLayerID": 0,
+	"tempoBPM": 60,
+	"videoAlpha": 0.5,
+	"children": [{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "substring",
+			"color": 15629590,
+			"label": "substring",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 5,
+			"visible": true
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "substr-n",
+			"color": 15629590,
+			"label": "substr-n",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 33,
+			"visible": true
+		}],
+	"info": {
+		"flashVersion": "WIN 26,0,0,137",
+		"swfVersion": "v456.0.4",
+		"videoOn": false,
+		"userAgent": "Scratch 2.0 Offline Editor",
+		"boardVersion": "mbot_uno",
+		"scriptCount": 1,
+		"spriteCount": 0
+	}
+}
